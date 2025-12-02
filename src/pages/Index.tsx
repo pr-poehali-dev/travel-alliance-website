@@ -121,9 +121,9 @@ export default function Index() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img 
-                src="https://cdn.poehali.dev/projects/9f9e0a4b-d821-45e6-81ac-842aad9a004e/files/12ffb808-b5c0-4bde-9554-4c238e8dff52.jpg" 
+                src="https://cdn.poehali.dev/files/aaff975a-8099-4e56-8403-001fbb9a1bdf.jpg" 
                 alt="Travel Alliance" 
-                className="h-12 w-12 rounded-full object-cover"
+                className="h-16 w-16 object-contain"
               />
               <span className="text-2xl font-heading font-bold text-primary">Travel Alliance</span>
             </div>
@@ -486,9 +486,9 @@ export default function Index() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img 
-                  src="https://cdn.poehali.dev/projects/9f9e0a4b-d821-45e6-81ac-842aad9a004e/files/12ffb808-b5c0-4bde-9554-4c238e8dff52.jpg" 
+                  src="https://cdn.poehali.dev/files/aaff975a-8099-4e56-8403-001fbb9a1bdf.jpg" 
                   alt="Travel Alliance" 
-                  className="h-10 w-10 rounded-full"
+                  className="h-12 w-12 object-contain"
                 />
                 <span className="text-xl font-heading font-bold">Travel Alliance</span>
               </div>
