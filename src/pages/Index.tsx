@@ -137,6 +137,9 @@ export default function Index() {
               <button onClick={() => scrollToSection('routes')} className="text-foreground hover:text-primary transition-colors font-medium">
                 Маршруты
               </button>
+              <button onClick={() => scrollToSection('gallery')} className="text-foreground hover:text-primary transition-colors font-medium">
+                Фотогалерея
+              </button>
               <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors font-medium">
                 О компании
               </button>
@@ -344,7 +347,58 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-muted/30">
+      <section id="gallery" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+              Фотогалерея
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Природа Забайкалья в лучших кадрах наших путешествий
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { src: 'https://cdn.poehali.dev/projects/9f9e0a4b-d821-45e6-81ac-842aad9a004e/files/a308cfbf-8492-4e3c-bbf9-9ece27d03dd8.jpg', caption: 'Горное озеро Забайкалья', tall: false },
+              { src: 'https://cdn.poehali.dev/projects/9f9e0a4b-d821-45e6-81ac-842aad9a004e/files/9f2e0f0f-0005-4728-8ef9-3acce0d41548.jpg', caption: 'Таёжные просторы', tall: true },
+              { src: 'https://cdn.poehali.dev/projects/9f9e0a4b-d821-45e6-81ac-842aad9a004e/files/bc5fdec0-01d5-4715-bf6b-1c99d6013f19.jpg', caption: 'Закат в горах', tall: false },
+              { src: 'https://cdn.poehali.dev/projects/9f9e0a4b-d821-45e6-81ac-842aad9a004e/files/56e56851-1e24-4995-86d8-6e1a37dfdbc0.jpg', caption: 'Каменные каньоны', tall: false },
+              { src: 'https://cdn.poehali.dev/projects/9f9e0a4b-d821-45e6-81ac-842aad9a004e/files/86aaeaf8-7027-49c8-98d7-6c35b5e8e8c1.jpg', caption: 'Альпийские луга', tall: true },
+              { src: 'https://cdn.poehali.dev/projects/9f9e0a4b-d821-45e6-81ac-842aad9a004e/files/0fb6554a-4fd8-47cf-8de2-98edf17f1055.jpg', caption: 'Зимний Байкал', tall: false }
+            ].map((photo, index) => (
+              <div 
+                key={index} 
+                className={`group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer ${
+                  photo.tall ? 'md:row-span-2' : ''
+                }`}
+              >
+                <div className={`${photo.tall ? 'h-[400px] md:h-full' : 'h-[300px]'} overflow-hidden`}>
+                  <img 
+                    src={photo.src} 
+                    alt={photo.caption}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white font-heading text-xl font-semibold">{photo.caption}</h3>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Icon name="Camera" size={20} className="mr-2" />
+              Смотреть больше фото
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
@@ -455,6 +509,7 @@ export default function Index() {
               <div className="space-y-2 text-sm opacity-90">
                 <p className="cursor-pointer hover:opacity-100" onClick={() => scrollToSection('tours')}>Туры</p>
                 <p className="cursor-pointer hover:opacity-100" onClick={() => scrollToSection('routes')}>Маршруты</p>
+                <p className="cursor-pointer hover:opacity-100" onClick={() => scrollToSection('gallery')}>Фотогалерея</p>
                 <p className="cursor-pointer hover:opacity-100" onClick={() => scrollToSection('about')}>О нас</p>
                 <p className="cursor-pointer hover:opacity-100" onClick={() => scrollToSection('reviews')}>Отзывы</p>
               </div>
